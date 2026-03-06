@@ -3,6 +3,9 @@ DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,x.ai
 
 # Apple AI
+DOMAIN-KEYWORD,manus
+
+# Apple AI
 DOMAIN-SUFFIX,smoot.apple.com
 DOMAIN,guzzoni.apple.com
 DOMAIN,apple-relay.fastly-edge.com
