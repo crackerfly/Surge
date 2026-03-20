@@ -1,3 +1,392 @@
+# > Perplexity AI（AI 搜索与多模型问答平台）
+# - 校对时间：2026-03-11
+
+DOMAIN-SUFFIX,perplexity.ai # Perplexity AI 官方主站
+DOMAIN-SUFFIX,api.perplexity.ai # Perplexity 官方 API 接口
+DOMAIN-SUFFIX,pplx.ai # Perplexity 官方短链与跳转域名
+DOMAIN-SUFFIX,pplx-res.cloudinary.com
+
+# > Hugging Face Platform Infrastructure（Hugging Face 平台基础设施域名）
+# - 校对时间：2026-03-11
+
+DOMAIN-SUFFIX,huggingface.co # Hugging Face 官方主域名
+DOMAIN-SUFFIX,hf.co # Hugging Face 官方短链域名
+DOMAIN-SUFFIX,hf.space # Hugging Face Spaces 应用运行域名
+DOMAIN-SUFFIX,cdn-lfs.huggingface.co # Hugging Face LFS 文件分发服务
+DOMAIN-SUFFIX,assets.huggingface.co # Hugging Face 静态资源服务
+DOMAIN-SUFFIX,huggingfaceusercontent.com # Hugging Face 用户内容托管
+DOMAIN-SUFFIX,api-inference.huggingface.co # Hugging Face 推理 API 服务
+DOMAIN-SUFFIX,endpoints.huggingface.cloud # Hugging Face 托管推理服务
+
+# > Poe Platform（Quora AI 多模型对话平台）
+# - 校对时间：2026-03-12
+
+DOMAIN-SUFFIX,poe.com # Poe 官方主站
+DOMAIN-SUFFIX,api.poe.com # Poe API 服务接口
+DOMAIN-SUFFIX,ws.poe.com # Poe WebSocket 实时通信接口
+DOMAIN-SUFFIX,poecdn.net # Poe 静态资源 CDN
+DOMAIN-SUFFIX,poeusercontent.com # Poe 用户内容资源
+DOMAIN-SUFFIX,quora.com # Quora 账号系统与登录依赖
+DOMAIN-SUFFIX,quoracdn.net # Quora 静态资源 CDN
+
+
+# > Haruka AI（生成式 AI 对话平台）
+# - 校对时间：2026-03-12
+
+DOMAIN-SUFFIX,haruka.ai # Haruka AI 官方域名
+DOMAIN-SUFFIX,haruka.cloud # Haruka AI 平台基础域名
+
+# > Cohere AI Platform（Cohere 生成式 AI 与模型 API 平台）
+# - 校对时间：2026-03-12
+
+DOMAIN-SUFFIX,cohere.ai # Cohere 官方平台域名
+DOMAIN-SUFFIX,api.cohere.ai # Cohere 官方 API 接口
+DOMAIN-SUFFIX,cohere.com # Cohere 企业官网
+DOMAIN-SUFFIX,dashboard.cohere.com # Cohere 控制台
+DOMAIN-SUFFIX,docs.cohere.com # Cohere 官方文档站点
+
+# > Voyage AI Platform（Voyage AI Embedding / Rerank 模型服务平台）
+# - 校对时间：2026-03-12
+
+DOMAIN-SUFFIX,voyageai.com # Voyage AI 官方主域名
+DOMAIN-SUFFIX,api.voyageai.com # Voyage AI 官方 API 接口
+DOMAIN-SUFFIX,docs.voyageai.com # Voyage AI 开发者文档站点
+
+# > AI21 Labs Platform（AI21 Labs 生成式 AI 与语言模型平台）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,ai21.com # AI21 Labs 官方主站
+DOMAIN-SUFFIX,api.ai21.com # AI21 官方 API 接口
+DOMAIN-SUFFIX,studio.ai21.com # AI21 Studio 在线开发与测试环境
+DOMAIN-SUFFIX,docs.ai21.com # AI21 官方开发者文档
+DOMAIN-SUFFIX,platform.ai21.com # AI21 开发者平台控制台
+DOMAIN-SUFFIX,cdn.ai21.com # AI21 静态资源 CDN
+
+# > Midjourney Platform（Midjourney 图像生成平台）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,midjourney.com # Midjourney 官方主站
+DOMAIN-SUFFIX,cdn.midjourney.com # Midjourney 静态资源 CDN
+DOMAIN-SUFFIX,midjourney.ghost.io # Midjourney 官方博客（Ghost 托管平台）
+
+# > Runway Platform（Runway Gen-2 / Gen-3 视频生成平台）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,runwayml.com # Runway 官方主站
+DOMAIN-SUFFIX,app.runwayml.com # Runway Web Studio 应用入口
+DOMAIN-SUFFIX,api.runwayml.com # Runway 官方 API 接口
+DOMAIN-SUFFIX,cdn.runwayml.com # Runway 静态资源 CDN
+DOMAIN-SUFFIX,assets.runwayml.com # Runway 静态资源域名
+DOMAIN-SUFFIX,media.runwayml.com # Runway 媒体资源域名
+DOMAIN-SUFFIX,files.runwayml.com # Runway 文件服务端点
+DOMAIN-SUFFIX,genmo.runwayml.com # Runway 模型推理服务端点
+DOMAIN-SUFFIX,render.runwayml.com # Runway 渲染任务服务
+
+# > Stability AI Platform（Stable Diffusion 生成式 AI 平台）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,stability.ai # Stability AI 官方主站
+DOMAIN-SUFFIX,api.stability.ai # Stability AI 官方 API 接口
+DOMAIN-SUFFIX,platform.stability.ai # Stability AI 平台控制台
+DOMAIN-SUFFIX,stability.dev # Stability AI 开发者资源域名
+DOMAIN-SUFFIX,cdn.stability.ai # Stability AI 静态资源 CDN
+DOMAIN-SUFFIX,stablediffusionapi.com # Stable Diffusion 第三方 API 服务（非 Stability 官方）
+DOMAIN-SUFFIX,clipdrop.co # ClipDrop 官方服务域名（Stability AI 产品）
+DOMAIN-SUFFIX,api.clipdrop.co # ClipDrop 官方 API 接口
+
+# > Pika Platform（Pika AI 视频生成平台）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,pika.art # Pika 官方主站
+DOMAIN-SUFFIX,api.pika.art # Pika 官方 API 接口
+DOMAIN-SUFFIX,cdn.pika.art # Pika 静态资源 CDN
+DOMAIN-SUFFIX,assets.pika.art # Pika 静态资源域名
+DOMAIN-SUFFIX,pika-realtime-prod.onrender.com # Pika 实时推理服务（Render 托管后端）
+
+# > Leonardo AI Platform（Leonardo AI 图像生成平台）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,leonardo.ai # Leonardo AI 官方主站
+DOMAIN-SUFFIX,api.leonardo.ai # Leonardo AI 官方 API 接口
+DOMAIN-SUFFIX,cdn.leonardo.ai # Leonardo AI 静态资源 CDN
+
+# > Krea AI Platform（Krea AI 图像 / 视频生成平台）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,krea.ai # Krea AI 官方主站
+DOMAIN-SUFFIX,api.krea.ai # Krea AI 官方 API 接口
+DOMAIN-SUFFIX,cdn.krea.ai # Krea AI 静态资源 CDN
+
+# > Luma Labs Platform（Luma AI / Dream Machine 平台相关域名）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,lumalabs.ai # Luma AI 官方平台域名
+DOMAIN-SUFFIX,app.lumalabs.ai # Luma AI Web 应用入口
+DOMAIN-SUFFIX,api.lumalabs.ai # Luma AI API 服务接口
+DOMAIN-SUFFIX,cdn.lumalabs.ai # Luma AI 静态资源 CDN
+DOMAIN-SUFFIX,assets.lumalabs.ai # Luma AI 静态资源服务
+DOMAIN-SUFFIX,files.lumalabs.ai # Luma AI 文件资源服务
+
+# > Together AI Platform（Together Computer 开源模型推理 / API 平台）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,together.ai # Together AI 官方平台域名
+DOMAIN-SUFFIX,api.together.ai # Together AI 官方 API 接口
+DOMAIN-SUFFIX,app.together.ai # Together AI 控制台（Dashboard）
+DOMAIN-SUFFIX,static.together.ai # Together AI 前端静态资源
+DOMAIN-SUFFIX,cdn.together.ai # Together AI 静态资源 CDN
+DOMAIN-SUFFIX,assets.together.ai # Together AI 前端资源域名
+DOMAIN-SUFFIX,prod-api.together.ai # Together AI 生产环境 API 节点
+DOMAIN-SUFFIX,togethercomputer.com # Together Computer 官方公司域名
+
+# > Modal Platform（Modal 无服务器 AI 推理与计算平台）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,modal.com # Modal 官方主站
+DOMAIN-SUFFIX,modal.run # Modal 任务运行与函数执行环境
+DOMAIN-SUFFIX,api.modal.com # Modal 官方 API 接口
+DOMAIN-SUFFIX,console.modal.com # Modal 控制台
+DOMAIN-SUFFIX,assets.modal.com # Modal 前端静态资源
+DOMAIN-SUFFIX,cdn.modal.com # Modal 静态资源 CDN
+
+# > Replicate Platform（Replicate 模型托管与云端推理平台）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,replicate.com # Replicate 官方主站与控制台
+DOMAIN-SUFFIX,api.replicate.com # Replicate 官方 API 接口
+DOMAIN-SUFFIX,replicate.delivery # Replicate 推理输出分发域名
+DOMAIN-SUFFIX,objects.replicate.com # Replicate 对象存储域名
+DOMAIN-SUFFIX,cdn.replicate.com # Replicate 前端静态资源 CDN
+DOMAIN-SUFFIX,status.replicate.com # Replicate 官方服务状态页面
+
+# > RunPod Platform（RunPod GPU 推理与模型部署平台）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,runpod.io # RunPod 官方主站
+DOMAIN-SUFFIX,runpod.ai # RunPod AI 平台主域
+DOMAIN-SUFFIX,api.runpod.ai # RunPod 官方 API 接口
+DOMAIN-SUFFIX,imgs.runpod.io # RunPod 控制台图片资源
+DOMAIN-SUFFIX,cdn.runpod.io # RunPod 静态资源 CDN
+DOMAIN-SUFFIX,runpodusercontent.com # RunPod 用户内容存储域名
+DOMAIN-SUFFIX,files.runpod.io # RunPod 文件上传与下载服务
+
+# > Suno Platform（Suno AI 音乐生成平台）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,suno.com # Suno 官方主站
+DOMAIN-SUFFIX,suno.ai # Suno AI 平台主域
+DOMAIN-SUFFIX,app.suno.ai # Suno Web 应用入口
+DOMAIN-SUFFIX,api.suno.ai # Suno 官方 API 接口
+DOMAIN-SUFFIX,cdn.suno.ai # Suno 静态资源 CDN
+DOMAIN-SUFFIX,assets.suno.ai # Suno 前端静态资源
+DOMAIN-SUFFIX,media.suno.ai # Suno 媒体资源服务
+DOMAIN-SUFFIX,files.suno.ai # Suno 文件服务接口
+DOMAIN-SUFFIX,content.suno.run # Suno 内容资源分发域名
+
+# > ElevenLabs Platform（ElevenLabs AI 语音生成平台）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,elevenlabs.io # ElevenLabs 官方主站
+DOMAIN-SUFFIX,app.elevenlabs.io # ElevenLabs Web 应用入口
+DOMAIN-SUFFIX,api.elevenlabs.io # ElevenLabs 官方 API 接口
+DOMAIN-SUFFIX,cdn.elevenlabs.io # ElevenLabs 静态资源 CDN
+DOMAIN-SUFFIX,assets.elevenlabs.io # ElevenLabs 前端静态资源
+DOMAIN-SUFFIX,voices.elevenlabs.io # ElevenLabs 语音模型资源
+DOMAIN-SUFFIX,media.elevenlabs.io # ElevenLabs 媒体资源服务
+
+# > HeyGen Platform（HeyGen AI 视频生成平台）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,heygen.com # HeyGen 官方主站
+DOMAIN-SUFFIX,app.heygen.com # HeyGen Web Studio 入口
+DOMAIN-SUFFIX,api.heygen.com # HeyGen 官方 API 接口
+DOMAIN-SUFFIX,cdn.heygen.com # HeyGen 静态资源 CDN
+DOMAIN-SUFFIX,assets.heygen.com # HeyGen 前端静态资源
+DOMAIN-SUFFIX,media.heygen.com # HeyGen 媒体资源服务
+DOMAIN-SUFFIX,files.heygen.com # HeyGen 文件服务接口
+DOMAIN-SUFFIX,render.heygen.com # HeyGen 视频渲染服务
+DOMAIN-SUFFIX,static.heygen.ai # HeyGen 静态资源服务
+
+# > PlayHT Platform（PlayHT AI 语音生成平台）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,play.ht # PlayHT 官方主站
+DOMAIN-SUFFIX,play.ai # PlayAI 语音平台域名
+DOMAIN-SUFFIX,app.play.ht # PlayHT Web 应用入口
+DOMAIN-SUFFIX,api.play.ht # PlayHT 官方 API 接口
+DOMAIN-SUFFIX,cdn.play.ht # PlayHT 静态资源 CDN
+DOMAIN-SUFFIX,assets.play.ht # PlayHT 前端静态资源
+DOMAIN-SUFFIX,media.play.ht # PlayHT 媒体资源服务
+DOMAIN-SUFFIX,files.play.ht # PlayHT 文件服务接口
+
+# > LOVO AI Platform（LOVO AI 语音生成平台）
+# - 校对时间：2026-03-13
+
+DOMAIN-SUFFIX,lovo.ai # LOVO AI 官方主站
+DOMAIN-SUFFIX,app.lovo.ai # LOVO Web Studio 入口
+DOMAIN-SUFFIX,api.lovo.ai # LOVO 官方 API 接口
+DOMAIN-SUFFIX,cdn.lovo.ai # LOVO 静态资源 CDN
+DOMAIN-SUFFIX,assets.lovo.ai # LOVO 前端静态资源
+DOMAIN-SUFFIX,media.lovo.ai # LOVO 媒体资源服务
+DOMAIN-SUFFIX,files.lovo.ai # LOVO 文件服务接口
+
+# > Revoice Platform（Revoice AI 语音克隆平台）
+# - 校对时间：2026-03-14
+
+DOMAIN-SUFFIX,revoice.ai # Revoice 官方主站
+DOMAIN-SUFFIX,app.revoice.ai # Revoice Web 应用入口
+DOMAIN-SUFFIX,api.revoice.ai # Revoice 官方 API 接口
+DOMAIN-SUFFIX,cdn.revoice.ai # Revoice 静态资源 CDN
+DOMAIN-SUFFIX,assets.revoice.ai # Revoice 前端静态资源
+DOMAIN-SUFFIX,media.revoice.ai # Revoice 媒体资源服务
+DOMAIN-SUFFIX,files.revoice.ai # Revoice 文件服务接口
+
+# > Synthesia Platform（Synthesia AI 数字人视频生成平台）
+# - 校对时间：2026-03-14
+
+DOMAIN-SUFFIX,synthesia.io # Synthesia 官方主站
+DOMAIN-SUFFIX,app.synthesia.io # Synthesia Web Studio 入口
+DOMAIN-SUFFIX,api.synthesia.io # Synthesia 官方 API 接口
+DOMAIN-SUFFIX,cdn.synthesia.io # Synthesia 静态资源 CDN
+DOMAIN-SUFFIX,assets.synthesia.io # Synthesia 前端静态资源
+DOMAIN-SUFFIX,media.synthesia.io # Synthesia 媒体资源服务
+DOMAIN-SUFFIX,files.synthesia.io # Synthesia 文件服务接口
+DOMAIN-SUFFIX,render.synthesia.io # Synthesia 视频渲染服务
+
+# > Fable Studio / Showrunner Platform（Fable AI 剧集生成平台）
+# - 校对时间：2026-03-14
+
+DOMAIN-SUFFIX,fable-studio.com # Fable Studio 官方站点
+DOMAIN-SUFFIX,fable.app # Fable AI 平台主域名
+DOMAIN-SUFFIX,app.fable.app # Fable Web 应用入口
+DOMAIN-SUFFIX,api.fable.app # Fable 官方 API 接口
+DOMAIN-SUFFIX,cdn.fable.app # Fable 静态资源 CDN
+DOMAIN-SUFFIX,assets.fable.app # Fable 前端静态资源
+DOMAIN-SUFFIX,media.fable.app # Fable 媒体资源服务
+DOMAIN-SUFFIX,files.fable.app # Fable 文件资源服务
+DOMAIN-SUFFIX,showrunner.ai # Showrunner AI 剧集生成平台
+DOMAIN-SUFFIX,app.showrunner.ai # Showrunner Web 应用入口
+DOMAIN-SUFFIX,api.showrunner.ai # Showrunner 官方 API 接口
+
+# > Dola AI Platform（Dola 多模型聚合对话平台）
+# - 基础设施：主要服务节点位于新加坡区域
+# - 校对时间：2026-03-14
+
+DOMAIN-SUFFIX,dola.com # Dola AI 官方主域名
+DOMAIN-SUFFIX,app.dola.com # Dola AI Web 应用入口
+DOMAIN-SUFFIX,api.dola.com # Dola AI 官方 API 接口
+DOMAIN-SUFFIX,cdn.dola.com # Dola 静态资源 CDN
+
+# > AI Business（AI 行业资讯与研究媒体）
+# - 校对时间：2026-03-15
+DOMAIN-SUFFIX,aibusiness.com # AI Business 行业资讯媒体站点
+
+# > Fireworks AI Platform（Fireworks 推理加速与模型托管平台）
+# - 校对时间：2026-03-15
+
+DOMAIN-SUFFIX,fireworks.ai # Fireworks AI 官方主站
+DOMAIN-SUFFIX,api.fireworks.ai # Fireworks API 服务接口
+DOMAIN-SUFFIX,app.fireworks.ai # Fireworks Web 控制台
+DOMAIN-SUFFIX,docs.fireworks.ai # Fireworks 官方文档站点
+DOMAIN-SUFFIX,cdn.fireworks.ai # Fireworks 静态资源 CDN
+DOMAIN-SUFFIX,assets.fireworks.ai # Fireworks 前端静态资源
+DOMAIN-SUFFIX,platform.fireworks.ai # Fireworks 平台服务入口
+DOMAIN-SUFFIX,studio.fireworks.ai # Fireworks Studio Web UI
+DOMAIN-SUFFIX,chat.fireworks.ai # Fireworks Chat 测试界面
+DOMAIN-SUFFIX,status.fireworks.ai # Fireworks 官方服务状态页面
+
+# > Tia AI Platform（Tia 生成式 AI 服务平台）
+# - 校对时间：2026-03-15
+
+DOMAIN-SUFFIX,tia-ai.com # Tia AI 官方平台域名
+DOMAIN-SUFFIX,fast.tia-ai.com # Tia AI 静态资源与前端加速节点
+
+# > OpenRouter Platform（多模型 API 聚合与路由服务）
+# - 校对时间：2026-03-15
+
+DOMAIN-SUFFIX,openrouter.ai # OpenRouter 官方平台域名
+
+# > Speechify Platform（AI 语音朗读与文本转语音服务）
+# - 校对时间：2026-03-15
+
+DOMAIN-SUFFIX,speechify.com # Speechify 官方平台域名
+
+# > Palantir Platform（企业数据分析与 AIP 人工智能平台）
+# - 校对时间：2026-03-15
+
+DOMAIN-SUFFIX,palantir.com # Palantir 官方平台与产品入口
+DOMAIN-SUFFIX,ai.palantir.com # Palantir AI / AIP 平台相关服务
+
+# > Nrich.ai Platform（AI 推荐与生成式服务平台）
+# - 校对时间：2026-03-15
+
+DOMAIN-SUFFIX,nrich.ai # Nrich.ai 官方平台主域名
+DOMAIN-SUFFIX,serve.nrich.ai # Nrich.ai 前端服务与 API 接入节点
+
+# > OpenCode Platform（AI 编程与代码生成平台）
+# - 校对时间：2026-03-15
+
+DOMAIN-SUFFIX,opencode.ai # OpenCode 官方平台主域名
+
+# > Dify Platform（开源 LLM 应用开发与 AI Agent 编排平台）
+# - 校对时间：2026-03-15
+
+DOMAIN-SUFFIX,dify.ai # Dify 官方平台主域名
+
+# > OpenClaw Platform（AI Agent 与自动化平台）
+# - 校对时间：2026-03-15
+
+DOMAIN-SUFFIX,openclaw.ai # OpenClaw 官方平台主域名
+
+# > Flowise Platform（AI Agent 与 LLM 工作流开发平台）
+# - 校对时间：2026-03-15
+
+DOMAIN-SUFFIX,flowiseai.com # Flowise 官方平台主域名
+
+# > Langflow Platform（AI Agent 与 LLM 工作流开发平台）
+# - 校对时间：2026-03-15
+
+DOMAIN-SUFFIX,langflow.org # Langflow 官方平台主域名
+
+# Monica
+DOMAIN-SUFFIX,monica.im
+DOMAIN-SUFFIX,monica-cdn.im
+
+# Manus
+DOMAIN-KEYWORD,manus
+DOMAIN-SUFFIX,manus.im
+
+# Cerebras
+DOMAIN-SUFFIX,cerebras.ai
+
+# Cursor
+DOMAIN-SUFFIX,cursor-cdn.com
+DOMAIN-SUFFIX,cursor.com
+DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,cursorapi.com
+
+# CodeRabbit
+DOMAIN-SUFFIX,coderabbit.ai
+DOMAIN-SUFFIX,coderabbit.gallery.vsassets.io
+
+# Lovart
+DOMAIN-SUFFIX,lovart.ai
+DOMAIN-SUFFIX,hotjar.com
+
+# Patch
+DOMAIN-SUFFIX,chutes.ai
+DOMAIN-SUFFIX,diabrowser.com
+DOMAIN-SUFFIX,gateway.ai.cloudflare.com
+DOMAIN-SUFFIX,openart.ai
+DOMAIN-SUFFIX,events.statsigapi.net
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,grazie.ai
+DOMAIN-SUFFIX,grazie.aws.intellij.net
+DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,client-api.arkoselabs.com
 DOMAIN-SUFFIX,behance.net
 DOMAIN-SUFFIX,cloudfront.net
 DOMAIN-SUFFIX,linux.do
