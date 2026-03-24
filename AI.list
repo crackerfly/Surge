@@ -262,6 +262,7 @@ DOMAIN,bard.google.com
 DOMAIN-SUFFIX,withgoogle.com
 DOMAIN-SUFFIX,googletagmanager.com
 DOMAIN-SUFFIX,ai.googleblog.com
+DOMAIN-SUFFIX,drive-thirdparty.googleusercontent.com
 
 # Antigravity
 DOMAIN,antigravity-pa.googleapis.com
