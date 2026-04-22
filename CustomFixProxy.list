@@ -373,9 +373,13 @@ DOMAIN-SUFFIX,coderabbit.gallery.vsassets.io
 DOMAIN-SUFFIX,lovart.ai
 DOMAIN-SUFFIX,hotjar.com
 
+# Bigme
+# DOMAIN-SUFFIX,xn--ghq880n3na965a.com
+# DOMAIN-SUFFIX,moe233.org
+DOMAIN-SUFFIX,bigme.pro
+DOMAIN-SUFFIX,bigmelook.com
+
 # Patch
-DOMAIN-SUFFIX,xn--ghq880n3na965a.com
-DOMAIN-SUFFIX,moe233.org
 DOMAIN-SUFFIX,chutes.ai
 DOMAIN-SUFFIX,diabrowser.com
 DOMAIN-SUFFIX,gateway.ai.cloudflare.com
@@ -392,9 +396,7 @@ DOMAIN-SUFFIX,client-api.arkoselabs.com
 DOMAIN-SUFFIX,behance.net
 DOMAIN-SUFFIX,cloudfront.net
 DOMAIN-SUFFIX,linux.do
-DOMAIN-SUFFIX,macked.app
-DOMAIN-SUFFIX,bigme.pro
-DOMAIN-SUFFIX,bigmelook.com
+DOMAIN-SUFFIX,macked.ap
 DOMAIN-SUFFIX,missav.ws
 DOMAIN-SUFFIX,pornhub.com
 DOMAIN-SUFFIX,envato-static.com
