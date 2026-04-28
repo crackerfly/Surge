@@ -74,8 +74,6 @@ DOMAIN-SUFFIX,stripe.com
 DOMAIN-SUFFIX,livekit.cloud
 
 #DNS Fix
-DOMAIN-SUFFIX,xn--ghq880n3na965a.com
-DOMAIN-SUFFIX,moe233.org
 DOMAIN-SUFFIX,chutes.ai
 DOMAIN-SUFFIX,diabrowser.com
 DOMAIN-SUFFIX,gateway.ai.cloudflare.com
