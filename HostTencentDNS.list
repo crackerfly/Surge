@@ -1,6 +1,6 @@
 DOMAIN-SUFFIX,tencent.com
 DOMAIN-SUFFIX,qcloud.com
-DOMAIN-SUFFIX,qcloudcdn.*
+DOMAIN-WILDCARD,qcloudcdn.*
 DOMAIN-SUFFIX,qcloudcos.com
 DOMAIN-SUFFIX,qcloudimg.com
 DOMAIN-SUFFIX,qcloudcjgj.com
@@ -23,11 +23,11 @@ DOMAIN-SUFFIX,weiyun.com
 DOMAIN-SUFFIX,gtimg.cn
 DOMAIN-SUFFIX,idqqimg.com
 DOMAIN-SUFFIX,cdn-go.cn
-DOMAIN-SUFFIX,smtcdns.*
+DOMAIN-WILDCARD,smtcdns.*
 DOMAIN-SUFFIX,url.cn
 DOMAIN-SUFFIX,jd.com
 DOMAIN-SUFFIX,360buyimg.com
 DOMAIN-SUFFIX,upos-sz-mirrorcos.bilivideo.com
-DOMAIN-SUFFIX,upos-sz-mirrorcos?.bilivideo.com
-DOMAIN-SUFFIX,upos-sz-mirrorcos??.bilivideo.com
+DOMAIN-WILDCARD,upos-sz-mirrorcos?.bilivideo.com
+DOMAIN-WILDCARD,upos-sz-mirrorcos??.bilivideo.com
 DOMAIN-SUFFIX,upos-sz-upcdntx.bilivideo.com
