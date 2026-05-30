@@ -6,14 +6,14 @@ DOMAIN-SUFFIX,tbcache.com
 DOMAIN-SUFFIX,tmall.com
 DOMAIN-SUFFIX,alicdn.com
 DOMAIN-SUFFIX,alikunlun.com
-DOMAIN-SUFFIX,aliapp.*
+DOMAIN-WILDCARD,aliapp.*
 DOMAIN-SUFFIX,alibabausercontent.com
 DOMAIN-SUFFIX,mmstat.com
 DOMAIN-SUFFIX,tb.cn
-DOMAIN-SUFFIX,aliyun.*
-DOMAIN-SUFFIX,aliyuncdn.*
+DOMAIN-WILDCARD,aliyun.*
+DOMAIN-WILDCARD,aliyuncdn.*
 DOMAIN-SUFFIX,aliyuncs.com
-DOMAIN-SUFFIX,aliyunddos????.com
+DOMAIN-WILDCARD,aliyunddos????.com
 DOMAIN-SUFFIX,aliyundrive.com
 DOMAIN-SUFFIX,aliyundun.com
 DOMAIN-SUFFIX,aliyundunwaf.com
@@ -36,5 +36,5 @@ DOMAIN-SUFFIX,mijia.tech
 DOMAIN-SUFFIX,miot-spec.org
 DOMAIN-SUFFIX,miui.com
 DOMAIN-SUFFIX,upos-sz-mirrorali.bilivideo.com
-DOMAIN-SUFFIX,upos-sz-mirrorali?.bilivideo.com
-DOMAIN-SUFFIX,upos-sz-mirrorali??.bilivideo.com
+DOMAIN-WILDCARD,upos-sz-mirrorali?.bilivideo.com
+DOMAIN-WILDCARD,upos-sz-mirrorali??.bilivideo.com
