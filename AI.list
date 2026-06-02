@@ -196,6 +196,12 @@ IP-CIDR6,2607:6bc0::/48
 IP-ASN,399358
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,clau.de
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercom-sheets.com
+DOMAIN-SUFFIX,intercom-reporting.com
+DOMAIN-SUFFIX,intercom.com
+DOMAIN-SUFFIX,getsentry.com
 
 # Google AI / Gemini / DeepMind
 DOMAIN-SUFFIX,deepmind.com
