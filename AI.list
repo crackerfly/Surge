@@ -1,4 +1,11 @@
 # OpenAI
+AND,((DOMAIN-KEYWORD,chatgpt-async-webps-prod-),(DOMAIN-SUFFIX,webpubsub.azure.com))
+AND,((DOMAIN-KEYWORD,openaicom-api-),(DOMAIN-SUFFIX,azurefd.net))
+DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+DOMAIN-SUFFIX,openaicomproductionae4b.blob.core.windows.net
+DOMAIN-SUFFIX,production-openaicom-storage.azureedge.net
+DOMAIN-SUFFIX,chat.com
 DOMAIN-SUFFIX,openai.com # OpenAI 官方主站
 DOMAIN-SUFFIX,chat.openai.com # ChatGPT Web 服务入口
 DOMAIN-SUFFIX,api.openai.com # OpenAI API 接口
@@ -351,13 +358,6 @@ DOMAIN,apple-relay.fastly-edge.com
 DOMAIN,apple-relay.apple.com
 DOMAIN,apple-relay.cloudflare.com
 DOMAIN,cp4.cloudflare.com
-
-# CDN & API
-DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net
-DOMAIN-SUFFIX,openaiapi-site.azureedge.net
-DOMAIN-SUFFIX,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
-DOMAIN-SUFFIX,openaicomproductionae4b.blob.core.windows.net
-DOMAIN-SUFFIX,production-openaicom-storage.azureedge.net
 
 # tracking
 DOMAIN-SUFFIX,sentry.io
