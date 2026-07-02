@@ -1,11 +1,3 @@
-# > Perplexity AI（AI 搜索与多模型问答平台）
-# - 校对时间：2026-03-11
-
-DOMAIN-SUFFIX,perplexity.ai # Perplexity AI 官方主站
-DOMAIN-SUFFIX,api.perplexity.ai # Perplexity 官方 API 接口
-DOMAIN-SUFFIX,pplx.ai # Perplexity 官方短链与跳转域名
-DOMAIN-SUFFIX,pplx-res.cloudinary.com
-
 # > Hugging Face Platform Infrastructure（Hugging Face 平台基础设施域名）
 # - 校对时间：2026-03-11
 
@@ -379,6 +371,13 @@ DOMAIN-SUFFIX,*.blob.core.windows.net
 # Bigme
 DOMAIN-SUFFIX,bigme.pro
 DOMAIN-SUFFIX,bigmelook.com
+
+# Google translate
+DOMAIN,translate.googleapis.com
+DOMAIN,translate-pa.googleapis.com
+DOMAIN,www.gstatic.com
+DOMAIN,ssl.gstatic.com
+DOMAIN,translate.google.com
 
 # Patch
 DOMAIN-SUFFIX,linphone.org
