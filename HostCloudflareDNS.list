@@ -9,3 +9,6 @@ DOMAIN-SUFFIX,workers.dev
 # > VPN Domains
 DOMAIN-SUFFIX,moe233.org
 DOMAIN-SUFFIX,qchwnd.moe
+# Bigme
+DOMAIN-SUFFIX,bigme.pro
+DOMAIN-SUFFIX,bigmelook.com
