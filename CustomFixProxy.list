@@ -364,9 +364,10 @@ DOMAIN-SUFFIX,coderabbit.gallery.vsassets.io
 # Github Download Microsoft CDN
 DOMAIN-SUFFIX,*.blob.core.windows.net
 
-# Bigme
+# VPN
 DOMAIN-SUFFIX,bigme.pro
 DOMAIN-SUFFIX,bigmelook.com
+DOMAIN-SUFFIX,pqjc.site
 
 # Google translate
 DOMAIN,translate.googleapis.com
