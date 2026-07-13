@@ -22,3 +22,5 @@ DOMAIN-SUFFIX,speedtest.net
 # > VPN Domains
 DOMAIN-SUFFIX,moe233.org
 DOMAIN-SUFFIX,qchwnd.moe
+# > OA
+DOMAIN-SUFFIX,sectrend.net
