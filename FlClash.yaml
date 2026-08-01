@@ -1,0 +1,587 @@
+# FlClash v0.8.94 / Windows 11 配置模板 v2；导入前必须替换下方两个订阅 URL，并作为 FlClash 本地配置导入。
+# FlClash UI 可能覆盖端口和 TUN 开关；请以 UI 实际状态为准。
+mixed-port: 7890
+bind-address: 127.0.0.1
+allow-lan: false
+mode: rule
+log-level: info
+ipv6: true
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: strict
+external-controller: 127.0.0.1:9090
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+dns:
+  enable: true
+  listen: 127.0.0.1:1053
+  ipv6: true
+  cache-algorithm: arc
+  prefer-h3: false
+  respect-rules: false
+  use-hosts: true
+  use-system-hosts: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-range6: fdfe:dcba:9876::1/64
+  fake-ip-filter-mode: rule
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  nameserver:
+    - 210.0.255.251
+    - 8.8.8.8
+    - 64.6.65.6
+  proxy-server-nameserver:
+    - https://10123.alidns.com/dns-query#DIRECT&h3=true
+    - https://doh.pub/dns-query#DIRECT
+  direct-nameserver:
+    - https://10123.alidns.com/dns-query#DIRECT&h3=true
+    - https://doh.pub/dns-query#DIRECT
+  direct-nameserver-follow-policy: true
+  nameserver-policy:
+    "rule-set:cn_domain":
+      - https://10123.alidns.com/dns-query#DIRECT&h3=true
+      - https://doh.pub/dns-query#DIRECT
+    "localhost": system
+    "+.lan": system
+    "+.local": system
+    "+.home.arpa": system
+    "+.msftconnecttest.com":
+      - https://10123.alidns.com/dns-query#DIRECT&h3=true
+      - https://doh.pub/dns-query#DIRECT
+    "+.msftncsi.com":
+      - https://10123.alidns.com/dns-query#DIRECT&h3=true
+      - https://doh.pub/dns-query#DIRECT
+    "time.windows.com":
+      - https://10123.alidns.com/dns-query#DIRECT&h3=true
+      - https://doh.pub/dns-query#DIRECT
+  fake-ip-filter:
+    - DOMAIN,localhost,real-ip
+    - DOMAIN-SUFFIX,lan,real-ip
+    - DOMAIN-SUFFIX,local,real-ip
+    - DOMAIN-SUFFIX,home.arpa,real-ip
+    - DOMAIN-KEYWORD,mdns,real-ip
+    - DOMAIN,_services._dns-sd._udp.local,real-ip
+    - DOMAIN,_airplay._tcp.local,real-ip
+    - DOMAIN,_googlecast._tcp.local,real-ip
+    - DOMAIN-SUFFIX,msftconnecttest.com,real-ip
+    - DOMAIN-SUFFIX,msftncsi.com,real-ip
+    - DOMAIN,time.windows.com,real-ip
+    - DOMAIN-KEYWORD,ntp,real-ip
+    - RULE-SET,cn_domain,real-ip
+    - MATCH,fake-ip
+
+tun:
+  enable: true
+  stack: mixed
+  auto-route: true
+  auto-detect-interface: true
+  strict-route: true # false 仅用于虚拟网卡/适配器故障排查，正常使用保持 true。
+  endpoint-independent-nat: true
+  # Windows 防火墙必须允许 FlClash/Mihomo 内核通过，mixed TUN 才能正常联网。
+  dns-hijack:
+    - any:53
+    - tcp://any:53
+  route-exclude-address:
+    - 127.0.0.0/8
+    - 10.0.0.0/8
+    - 172.16.0.0/12
+    - 192.168.0.0/16
+    - 100.64.0.0/10
+    - 169.254.0.0/16
+    - 224.0.0.0/4
+    - 255.255.255.255/32
+    - ::1/128
+    # 不排除整个 fc00::/7：IPv6 Fake-IP 池位于 ULA；真实 ULA 仍由主规则 DIRECT。
+    - fe80::/10
+    - ff00::/8
+
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: true
+  sniff:
+    HTTP:
+      ports: [80, 8080, 8000, 8888]
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  skip-dst-address:
+    - 127.0.0.0/8
+    - 10.0.0.0/8
+    - 172.16.0.0/12
+    - 192.168.0.0/16
+    - 100.64.0.0/10
+    - 169.254.0.0/16
+    - 224.0.0.0/4
+    - ::1/128
+    - fc00::/7
+    - fe80::/10
+    - ff00::/8
+  skip-domain:
+    - localhost
+    - +.lan
+    - +.local
+    - +.home.arpa
+    - _services._dns-sd._udp.local
+    - _airplay._tcp.local
+    - _googlecast._tcp.local
+    - router.asus.com
+    - routerlogin.net
+    - tplinkwifi.net
+
+proxy-providers:
+  # 订阅响应必须包含 Clash/Mihomo 兼容的 proxies 字段。
+  # 只使用一个订阅时，删除 SecondNodeList 及每个 use 列表中的对应项。
+  NodeList:
+    type: http
+    url: https://VPN-1-URL
+    path: ./proxy_providers/nodelist.yaml
+    interval: 21600
+    proxy: DIRECT
+    header:
+      User-Agent:
+        - clash.meta
+        - Mihomo/1.18.0
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
+      timeout: 5000
+      lazy: true
+      expected-status: 204
+    exclude-filter: '(?i)(?:剩余(?:流量|容量)?|流量(?:提示|信息)?|到期(?:时间|日期)?|过期(?:时间|日期)?|套餐(?:信息|到期)?|官网|官方(?:网站|站点)?|公告|维护|重置|支持|客服|邮箱|traffic|expiry|expire(?:d|s|ation)?|plan|official(?:\s*(?:site|website))?|site|website|notice|announcement|maintenance|reset)'
+    override:
+      udp: true
+      additional-prefix: '[S1] '
+  SecondNodeList:
+    type: http
+    url: https://VPN-2-URL
+    path: ./proxy_providers/second-nodelist.yaml
+    interval: 21600
+    proxy: DIRECT
+    header:
+      User-Agent:
+        - clash.meta
+        - Mihomo/1.18.0
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
+      timeout: 5000
+      lazy: true
+      expected-status: 204
+    exclude-filter: '(?i)(?:剩余(?:流量|容量)?|流量(?:提示|信息)?|到期(?:时间|日期)?|过期(?:时间|日期)?|套餐(?:信息|到期)?|官网|官方(?:网站|站点)?|公告|维护|重置|支持|客服|邮箱|traffic|expiry|expire(?:d|s|ation)?|plan|official(?:\s*(?:site|website))?|site|website|notice|announcement|maintenance|reset)'
+    override:
+      udp: true
+      additional-prefix: '[S2] '
+
+rule-providers:
+  # MetaCubeX MRS 规则集每日直连更新；缓存文件分别保存于 ruleset 目录。
+  cn_domain:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.mrs
+    path: ./ruleset/cn_domain.mrs
+    interval: 86400
+    proxy: DIRECT
+  cn_ip:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.mrs
+    path: ./ruleset/cn_ip.mrs
+    interval: 86400
+    proxy: DIRECT
+  ai:
+    type: http
+    behavior: domain
+    format: mrs
+    url: 'https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ai-!cn.mrs'
+    path: ./ruleset/ai.mrs
+    interval: 86400
+    proxy: DIRECT
+  adobe:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/adobe.mrs
+    path: ./ruleset/adobe.mrs
+    interval: 86400
+    proxy: DIRECT
+  figma:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/figma.mrs
+    path: ./ruleset/figma.mrs
+    interval: 86400
+    proxy: DIRECT
+  canva:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/canva.mrs
+    path: ./ruleset/canva.mrs
+    interval: 86400
+    proxy: DIRECT
+  dev:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-dev.mrs
+    path: ./ruleset/dev.mrs
+    interval: 86400
+    proxy: DIRECT
+  media:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-media.mrs
+    path: ./ruleset/media.mrs
+    interval: 86400
+    proxy: DIRECT
+  entertainment:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-entertainment.mrs
+    path: ./ruleset/entertainment.mrs
+    interval: 86400
+    proxy: DIRECT
+  ads:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.mrs
+    path: ./ruleset/ads.mrs
+    interval: 86400
+    proxy: DIRECT
+  geolocation_not_cn:
+    type: http
+    behavior: domain
+    format: mrs
+    url: 'https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.mrs'
+    path: ./ruleset/geolocation_not_cn.mrs
+    interval: 86400
+    proxy: DIRECT
+
+proxy-groups:
+  - name: Proxies
+    type: select
+    proxies:
+      - Smatic
+      - Manual
+      - HK
+      - TW
+      - JP
+      - SG
+      - US
+      - KR
+      - Automatic
+      - Fallback
+      - Balance
+    default-selected: Smatic
+  - name: Agentic
+    type: fallback
+    proxies:
+      - SG
+      - TW
+      - JP
+      - US
+    empty-fallback: REJECT
+    url: https://www.gstatic.com/generate_204
+    interval: 600
+    timeout: 5000
+    lazy: true
+  - name: Smatic
+    type: url-test
+    use:
+      - NodeList
+      - SecondNodeList
+    filter: '(?i)(?:新加坡|狮城|Singapore|(?:^|[\s_\-\[\]])SG(?:[0-9]{1,3})?(?:$|[\s_\-\[\]])|臺灣|台湾|台灣|Taiwan|Taipei|(?:^|[\s_\-\[\]])TW(?:[0-9]{1,3})?(?:$|[\s_\-\[\]])|日本|Japan|东京|東京|大阪|Tokyo|Osaka|(?:^|[\s_\-\[\]])JP(?:[0-9]{1,3})?(?:$|[\s_\-\[\]]))'
+    empty-fallback: COMPATIBLE
+    url: https://www.gstatic.com/generate_204
+    interval: 600
+    timeout: 5000
+    lazy: true
+    tolerance: 50
+  - name: Manual
+    type: select
+    use:
+      - NodeList
+      - SecondNodeList
+    empty-fallback: COMPATIBLE
+    url: https://www.gstatic.com/generate_204
+    interval: 600
+    timeout: 5000
+    lazy: true
+  - name: Final
+    type: select
+    proxies:
+      - Proxies
+      - Smatic
+      - Manual
+      - DIRECT
+    default-selected: Proxies
+  - name: GlobalMedia
+    type: select
+    proxies:
+      - Proxies
+      - HK
+      - TW
+      - JP
+      - SG
+      - US
+      - KR
+      - Manual
+    default-selected: Proxies
+  - name: Coding
+    type: select
+    proxies:
+      - Proxies
+      - US
+      - JP
+      - SG
+      - TW
+      - Manual
+    default-selected: Proxies
+  - name: Creative
+    type: select
+    proxies:
+      - Proxies
+      - SG
+      - JP
+      - TW
+      - US
+      - Manual
+    default-selected: Proxies
+  - name: AdGuard
+    type: select
+    proxies:
+      - DIRECT
+      - REJECT
+    default-selected: DIRECT
+  - name: SG
+    type: url-test
+    use:
+      - NodeList
+      - SecondNodeList
+    filter: '(?i)(?:新加坡|狮城|Singapore|(?:^|[\s_\-\[\]])SG(?:[0-9]{1,3})?(?:$|[\s_\-\[\]]))'
+    empty-fallback: REJECT
+    url: https://www.gstatic.com/generate_204
+    interval: 600
+    timeout: 5000
+    lazy: true
+    tolerance: 50
+  - name: JP
+    type: url-test
+    use:
+      - NodeList
+      - SecondNodeList
+    filter: '(?i)(?:日本|Japan|东京|東京|大阪|Tokyo|Osaka|(?:^|[\s_\-\[\]])JP(?:[0-9]{1,3})?(?:$|[\s_\-\[\]]))'
+    empty-fallback: REJECT
+    url: https://www.gstatic.com/generate_204
+    interval: 600
+    timeout: 5000
+    lazy: true
+    tolerance: 50
+  - name: TW
+    type: url-test
+    use:
+      - NodeList
+      - SecondNodeList
+    filter: '(?i)(?:臺灣|台湾|台灣|Taiwan|Taipei|(?:^|[\s_\-\[\]])TW(?:[0-9]{1,3})?(?:$|[\s_\-\[\]]))'
+    empty-fallback: REJECT
+    url: https://www.gstatic.com/generate_204
+    interval: 600
+    timeout: 5000
+    lazy: true
+    tolerance: 50
+  - name: HK
+    type: url-test
+    use:
+      - NodeList
+      - SecondNodeList
+    filter: '(?i)(?:香港|Hong\s*Kong|(?:^|[\s_\-\[\]])HK(?:[0-9]{1,3})?(?:$|[\s_\-\[\]]))'
+    empty-fallback: REJECT
+    url: https://www.gstatic.com/generate_204
+    interval: 600
+    timeout: 5000
+    lazy: true
+    tolerance: 50
+  - name: US
+    type: url-test
+    use:
+      - NodeList
+      - SecondNodeList
+    filter: '(?i)(?:美国|美國|United\s*States|Los\s*Angeles|New\s*York|Seattle|(?:^|[\s_\-\[\]])USA?(?:[0-9]{1,3})?(?:$|[\s_\-\[\]]))'
+    empty-fallback: REJECT
+    url: https://www.gstatic.com/generate_204
+    interval: 600
+    timeout: 5000
+    lazy: true
+    tolerance: 50
+  - name: KR
+    type: url-test
+    use:
+      - NodeList
+      - SecondNodeList
+    filter: '(?i)(?:韩国|韓國|首尔|South\s*Korea|Korea|Seoul|(?:^|[\s_\-\[\]])KR(?:[0-9]{1,3})?(?:$|[\s_\-\[\]]))'
+    empty-fallback: REJECT
+    url: https://www.gstatic.com/generate_204
+    interval: 600
+    timeout: 5000
+    lazy: true
+    tolerance: 50
+  - name: Automatic
+    type: url-test
+    use:
+      - NodeList
+      - SecondNodeList
+    empty-fallback: COMPATIBLE
+    url: https://www.gstatic.com/generate_204
+    interval: 600
+    timeout: 5000
+    lazy: true
+    tolerance: 50
+  - name: Fallback
+    type: fallback
+    use:
+      - NodeList
+      - SecondNodeList
+    empty-fallback: COMPATIBLE
+    url: https://www.gstatic.com/generate_204
+    interval: 600
+    timeout: 5000
+    lazy: true
+  - name: Balance
+    type: load-balance
+    use:
+      - NodeList
+      - SecondNodeList
+    empty-fallback: COMPATIBLE
+    strategy: consistent-hashing
+    url: https://www.gstatic.com/generate_204
+    interval: 600
+    timeout: 5000
+    lazy: true
+
+rules:
+  # 阶段 0：自身、内网与基础设施直连。
+  - PROCESS-NAME,FlClash.exe,DIRECT
+  - PROCESS-NAME,mihomo.exe,DIRECT
+  - IP-CIDR,0.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,192.0.0.0/24,DIRECT,no-resolve
+  - IP-CIDR,192.0.2.0/24,DIRECT,no-resolve
+  - IP-CIDR,192.88.99.0/24,DIRECT,no-resolve
+  - IP-CIDR,198.51.100.0/24,DIRECT,no-resolve
+  - IP-CIDR,203.0.113.0/24,DIRECT,no-resolve
+  - IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+  - IP-CIDR,240.0.0.0/4,DIRECT,no-resolve
+  - IP-CIDR,255.255.255.255/32,DIRECT,no-resolve
+  - IP-CIDR6,::/128,DIRECT,no-resolve
+  - IP-CIDR6,::1/128,DIRECT,no-resolve
+  - IP-CIDR6,fc00::/7,DIRECT,no-resolve
+  - IP-CIDR6,fe80::/10,DIRECT,no-resolve
+  - IP-CIDR6,ff00::/8,DIRECT,no-resolve
+  - DOMAIN,localhost,DIRECT
+  - DOMAIN-SUFFIX,lan,DIRECT
+  - DOMAIN-SUFFIX,local,DIRECT
+  - DOMAIN-SUFFIX,home.arpa,DIRECT
+  - DOMAIN-KEYWORD,mdns,DIRECT
+  - DOMAIN,_services._dns-sd._udp.local,DIRECT
+  - DOMAIN,_airplay._tcp.local,DIRECT
+  - DOMAIN,_googlecast._tcp.local,DIRECT
+  - DOMAIN,10123.alidns.com,DIRECT
+  - DOMAIN,doh.pub,DIRECT
+  - IP-CIDR,223.5.5.5/32,DIRECT,no-resolve
+  - IP-CIDR,119.29.29.29/32,DIRECT,no-resolve
+  - DOMAIN-SUFFIX,msftconnecttest.com,DIRECT
+  - DOMAIN-SUFFIX,msftncsi.com,DIRECT
+  - DOMAIN,time.windows.com,DIRECT
+  - DOMAIN,time.nist.gov,DIRECT
+  - DOMAIN-SUFFIX,pool.ntp.org,DIRECT
+  - DOMAIN,time.cloudflare.com,DIRECT
+  - DST-PORT,123,DIRECT
+  - DST-PORT,5353,DIRECT
+  - DST-PORT,1900,DIRECT
+
+  # 阶段 1：中国域名。
+  - RULE-SET,cn_domain,DIRECT
+
+  # 阶段 2：Midjourney 与其依赖的 Discord 域名本地修正，必须先于 AI 通用规则。
+  - DOMAIN-SUFFIX,midjourney.com,Creative
+  - DOMAIN-SUFFIX,midjourneycdn.com,Creative
+  - DOMAIN-SUFFIX,discord.com,Creative
+  - DOMAIN-SUFFIX,discordapp.com,Creative
+  - DOMAIN-SUFFIX,discordapp.net,Creative
+  - DOMAIN-SUFFIX,discord.media,Creative
+
+  # 阶段 3：Agentic；Google 仅列出 Gemini/AI Studio 所需的精确域名。
+  - PROCESS-NAME,ChatGPT.exe,Agentic # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - PROCESS-NAME,Claude.exe,Agentic # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - PROCESS-NAME,codex.exe,Agentic # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - PROCESS-NAME,gemini.exe,Agentic # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - DOMAIN-SUFFIX,chatgpt.com,Agentic
+  - DOMAIN-SUFFIX,openai.com,Agentic
+  - DOMAIN-SUFFIX,oaistatic.com,Agentic
+  - DOMAIN-SUFFIX,oaiusercontent.com,Agentic
+  - DOMAIN-SUFFIX,claude.ai,Agentic
+  - DOMAIN-SUFFIX,anthropic.com,Agentic
+  - DOMAIN-SUFFIX,claudeusercontent.com,Agentic
+  - DOMAIN,gemini.google.com,Agentic
+  - DOMAIN,aistudio.google.com,Agentic
+  - DOMAIN,generativelanguage.googleapis.com,Agentic
+  - DOMAIN,alkalimakersuite-pa.clients6.google.com,Agentic
+  - RULE-SET,ai,Agentic
+
+  # 阶段 4：创意软件与官方服务。
+  - PROCESS-NAME,Photoshop.exe,Creative # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - PROCESS-NAME,Illustrator.exe,Creative # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - PROCESS-NAME,AfterFX.exe,Creative # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - PROCESS-NAME,Adobe Premiere Pro.exe,Creative # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - PROCESS-NAME,Figma.exe,Creative # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - PROCESS-NAME,Canva.exe,Creative # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - RULE-SET,adobe,Creative
+  - RULE-SET,figma,Creative
+  - RULE-SET,canva,Creative
+
+  # 阶段 5：编码工具；不绑定通用 shell、Python 或 Node 运行时。
+  - PROCESS-NAME,Code.exe,Coding # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - PROCESS-NAME,Cursor.exe,Coding # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - PROCESS-NAME,Windsurf.exe,Coding # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - PROCESS-NAME,git.exe,Coding # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - PROCESS-NAME,gh.exe,Coding # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - PROCESS-NAME,GitHubDesktop.exe,Coding # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - PROCESS-NAME,Docker Desktop.exe,Coding # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - RULE-SET,dev,Coding
+
+  # 阶段 6：全球媒体。
+  - PROCESS-NAME,Spotify.exe,GlobalMedia # 若实际进程名不同，仅替换 exe 名；策略与顺序不变。
+  - RULE-SET,media,GlobalMedia
+  - RULE-SET,entertainment,GlobalMedia
+
+  # 阶段 7：广告规则可选，AdGuard 默认 DIRECT。
+  - RULE-SET,ads,AdGuard
+
+  # 阶段 8：非中国地理域名。
+  - RULE-SET,geolocation_not_cn,Proxies
+
+  # 阶段 9：中国 IP 直连。
+  - RULE-SET,cn_ip,DIRECT,no-resolve
+
+  # 阶段 10：最终策略必须置于最后。
+  - MATCH,Final
