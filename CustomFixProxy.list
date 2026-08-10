@@ -1,3 +1,72 @@
+# Github Download Microsoft CDN
+DOMAIN-SUFFIX,*.blob.core.windows.net
+
+# > VPN Domains
+DOMAIN-SUFFIX,moe233.org
+DOMAIN-SUFFIX,qchwnd.moe
+DOMAIN-SUFFIX,aikunapp.com
+DOMAIN-SUFFIX,t4kz6py9.top
+DOMAIN-SUFFIX,ccddn4.icu
+DOMAIN-SUFFIX,ccdnadns.cc
+
+# Bigme
+DOMAIN-SUFFIX,bigme.pro
+DOMAIN-SUFFIX,bigmelook.com
+DOMAIN-SUFFIX,bigme.online
+DOMAIN-SUFFIX,pqjc.site
+
+# Google translate
+DOMAIN,translate.googleapis.com
+DOMAIN,translate-pa.googleapis.com
+DOMAIN,www.gstatic.com
+DOMAIN,ssl.gstatic.com
+DOMAIN,translate.google.com
+
+# Patch
+DOMAIN-SUFFIX,linphone.org
+DOMAIN-SUFFIX,chutes.ai
+DOMAIN-SUFFIX,diabrowser.com
+DOMAIN-SUFFIX,gateway.ai.cloudflare.com
+DOMAIN-SUFFIX,openart.ai
+DOMAIN-SUFFIX,events.statsigapi.net
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,grazie.ai
+DOMAIN-SUFFIX,grazie.aws.intellij.net
+DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,client-api.arkoselabs.com
+DOMAIN-SUFFIX,behance.net
+DOMAIN-SUFFIX,cloudfront.net
+DOMAIN-SUFFIX,linux.do
+DOMAIN-SUFFIX,macked.ap
+DOMAIN-SUFFIX,missav.ws
+DOMAIN-SUFFIX,pornhub.com
+DOMAIN-SUFFIX,envato-static.com
+DOMAIN-SUFFIX,icons8.com
+DOMAIN-SUFFIX,zetatechs.com
+DOMAIN-SUFFIX,gptapi.us
+DOMAIN-SUFFIX,vercel.app
+DOMAIN-SUFFIX,vercel.com
+DOMAIN-SUFFIX,telemetrydeck.com
+DOMAIN-SUFFIX,lemonsqueezy.com
+DOMAIN-SUFFIX,adapty.io
+DOMAIN-SUFFIX,ipify.org
+DOMAIN-SUFFIX,adjust.com
+DOMAIN-SUFFIX,stripecdn.com
+DOMAIN-SUFFIX,stripe.com
+DOMAIN-SUFFIX,zeabur.app
+DOMAIN-SUFFIX,zeabur.com
+DOMAIN-SUFFIX,freestyle.cc.cd
+DOMAIN-SUFFIX,hshwk.org
+DOMAIN-SUFFIX,rjj.cc
+DOMAIN-SUFFIX,dustinwin.cc.cd 
+DOMAIN-SUFFIX,workers.dev
+DOMAIN-SUFFIX,longbridge.com
+DOMAIN-SUFFIX,ccwu.cc
+DOMAIN-SUFFIX,v2ex.com
+
 # > Hugging Face Platform Infrastructure（Hugging Face 平台基础设施域名）
 # - 校对时间：2026-03-11
 
@@ -360,72 +429,3 @@ DOMAIN-SUFFIX,cursorapi.com
 # CodeRabbit
 DOMAIN-SUFFIX,coderabbit.ai
 DOMAIN-SUFFIX,coderabbit.gallery.vsassets.io
-
-# Github Download Microsoft CDN
-DOMAIN-SUFFIX,*.blob.core.windows.net
-
-# > VPN Domains
-DOMAIN-SUFFIX,moe233.org
-DOMAIN-SUFFIX,qchwnd.moe
-DOMAIN-SUFFIX,aikunapp.com
-DOMAIN-SUFFIX,t4kz6py9.top
-DOMAIN-SUFFIX,ccddn4.icu
-DOMAIN-SUFFIX,ccdnadns.cc
-
-# Bigme
-DOMAIN-SUFFIX,bigme.pro
-DOMAIN-SUFFIX,bigmelook.com
-DOMAIN-SUFFIX,bigme.online
-DOMAIN-SUFFIX,pqjc.site
-
-# Google translate
-DOMAIN,translate.googleapis.com
-DOMAIN,translate-pa.googleapis.com
-DOMAIN,www.gstatic.com
-DOMAIN,ssl.gstatic.com
-DOMAIN,translate.google.com
-
-# Patch
-DOMAIN-SUFFIX,linphone.org
-DOMAIN-SUFFIX,chutes.ai
-DOMAIN-SUFFIX,diabrowser.com
-DOMAIN-SUFFIX,gateway.ai.cloudflare.com
-DOMAIN-SUFFIX,openart.ai
-DOMAIN-SUFFIX,events.statsigapi.net
-DOMAIN-SUFFIX,featuregates.org
-DOMAIN-SUFFIX,grazie.ai
-DOMAIN-SUFFIX,grazie.aws.intellij.net
-DOMAIN-SUFFIX,identrust.com
-DOMAIN-SUFFIX,intercom.io
-DOMAIN-SUFFIX,intercomcdn.com
-DOMAIN-SUFFIX,auth0.com
-DOMAIN-SUFFIX,client-api.arkoselabs.com
-DOMAIN-SUFFIX,behance.net
-DOMAIN-SUFFIX,cloudfront.net
-DOMAIN-SUFFIX,linux.do
-DOMAIN-SUFFIX,macked.ap
-DOMAIN-SUFFIX,missav.ws
-DOMAIN-SUFFIX,pornhub.com
-DOMAIN-SUFFIX,envato-static.com
-DOMAIN-SUFFIX,icons8.com
-DOMAIN-SUFFIX,zetatechs.com
-DOMAIN-SUFFIX,gptapi.us
-DOMAIN-SUFFIX,vercel.app
-DOMAIN-SUFFIX,vercel.com
-DOMAIN-SUFFIX,telemetrydeck.com
-DOMAIN-SUFFIX,lemonsqueezy.com
-DOMAIN-SUFFIX,adapty.io
-DOMAIN-SUFFIX,ipify.org
-DOMAIN-SUFFIX,adjust.com
-DOMAIN-SUFFIX,stripecdn.com
-DOMAIN-SUFFIX,stripe.com
-DOMAIN-SUFFIX,zeabur.app
-DOMAIN-SUFFIX,zeabur.com
-DOMAIN-SUFFIX,freestyle.cc.cd
-DOMAIN-SUFFIX,hshwk.org
-DOMAIN-SUFFIX,rjj.cc
-DOMAIN-SUFFIX,dustinwin.cc.cd 
-DOMAIN-SUFFIX,workers.dev
-DOMAIN-SUFFIX,longbridge.com
-DOMAIN-SUFFIX,ccwu.cc
-DOMAIN-SUFFIX,v2ex.com
