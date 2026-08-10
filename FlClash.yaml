@@ -553,6 +553,9 @@ rules:
   - DOMAIN,_services._dns-sd._udp.local,DIRECT
   - DOMAIN,_airplay._tcp.local,DIRECT
   - DOMAIN,_googlecast._tcp.local,DIRECT
+  - PROCESS-NAME-REGEX,(?i)^(Weixin|WeChat|WeChatAppEx|QQ|TIM)(\.exe)?$,DIRECT
+  - PROCESS-NAME-REGEX,(?i)^(Feishu)(\.exe)?$,DIRECT
+  - PROCESS-NAME-REGEX,(?i)^ding(talk|ding),DIRECT
   - PROCESS-NAME,FlClash.exe,DIRECT
   - PROCESS-NAME,FlClashCore.exe,DIRECT
   - PROCESS-PATH-WILDCARD,/Applications//Volumes/FlClash/*,DIRECT
