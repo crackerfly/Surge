@@ -11,6 +11,23 @@ DOMAIN-SUFFIX,alidns.com
 DOMAIN-SUFFIX,doh.pub
 DOMAIN-SUFFIX,mxhichina.com
 DOMAIN-SUFFIX,googletraveladservices-cn.com
+
+# Apple China
+DOMAIN-SUFFIX,apple.com.cn
+DOMAIN-SUFFIX,icloud.com.cn
+DOMAIN-SUFFIX,applestore.com.cn
+DOMAIN-SUFFIX,applecomputer.com.cn
+DOMAIN-SUFFIX,applecenter.com.cn
+DOMAIN-SUFFIX,appledns.com.cn
+DOMAIN-SUFFIX,apple-dns.com.cn
+DOMAIN-SUFFIX,applepaycash.com.cn
+DOMAIN-SUFFIX,applepaysupplies.com.cn
+DOMAIN-SUFFIX,appletv4.com.cn
+DOMAIN-SUFFIX,ipod.com.cn
+DOMAIN-SUFFIX,macbookair.com.cn
+DOMAIN-SUFFIX,livephotos.com.cn
+DOMAIN-SUFFIX,ecgapp.com.cn
+
 #公益站
 DOMAIN-SUFFIX,x666.me
 DOMAIN-SUFFIX,hotaruapi.com
