@@ -11,8 +11,6 @@ DOMAIN-SUFFIX,alidns.com
 DOMAIN-SUFFIX,doh.pub
 DOMAIN-SUFFIX,mxhichina.com
 DOMAIN-SUFFIX,googletraveladservices-cn.com
-#Apple China
-DOMAIN-SUFFIX,icloud.com.cn
 #公益站
 DOMAIN-SUFFIX,x666.me
 DOMAIN-SUFFIX,hotaruapi.com
