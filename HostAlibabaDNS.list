@@ -38,5 +38,3 @@ DOMAIN-SUFFIX,miui.com
 DOMAIN-SUFFIX,upos-sz-mirrorali.bilivideo.com
 DOMAIN-WILDCARD,upos-sz-mirrorali?.bilivideo.com
 DOMAIN-WILDCARD,upos-sz-mirrorali??.bilivideo.com
-#VPN
-DOMAIN-SUFFIX,chylink.xyz
