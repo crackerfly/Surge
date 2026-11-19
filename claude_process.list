@@ -1,1 +1,6 @@
 PROCESS-NAME,/Applications/Claude.app/
+DOMAIN,us5.datadoghq.com
+DOMAIN,r.stripe.com
+DOMAIN-SUFFIX,siftscience.com
+DOMAIN,fcmtoken.googleapis.com
+IP-CIDR,34.8.0.0/16,no-resolve
