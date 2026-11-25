@@ -1,0 +1,15 @@
+#!name=Google One Body Rewrite
+#!desc=按原 Loon 规则替换 one.google.com/ai? 的响应正文；
+#!requirement=CORE_VERSION>=20
+
+[Body Rewrite]
+# 使用这个一折订阅
+http-response ^https://one\.google\.com/ai\? g1\.ios\.30tb\.ai\.pro\.m g1.ai.ultra.3months_ip_90p.acq g1\.ios\.20tb\.m\.v2 g1.20tb.3months_ip_90p.acq
+
+# 使用这个, 土区低价2949.99 里拉
+#http-response ^https://one\.google\.com/ai\?.*$ 30tb\.ai\.pro\.m 30tb.m g1\.ios\.20tb\.m\.v2 g1.20tb.3months_ip_90p.acq
+
+
+[MITM]
+hostname = %APPEND% one.google.com
+h2 = true
